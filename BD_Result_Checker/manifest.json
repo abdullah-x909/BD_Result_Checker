@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "BD Result Auto Checker",
+  "description": "Auto-fill and submit BD education board results from 4 IP-based servers.",
+  "version": "1.0",
+  "permissions": ["tabs", "storage", "scripting"],
+  "host_permissions": [
+    "http://103.230.107.233/*",
+    "http://103.230.107.235/*",
+    "http://103.230.104.203/*",
+    "http://103.230.104.222/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://103.230.107.233/*",
+        "http://103.230.107.235/*",
+        "http://103.230.104.203/*",
+        "http://103.230.104.222/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["ping.mp3"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+
