@@ -53,7 +53,7 @@
 
 ## 🎥 Video Guide
 
-📽️ [Click here to watch](#)
+📽️ [Click here to watch](https://www.facebook.com/share/v/1CgsQMa3JK/)
 
 ---
 
